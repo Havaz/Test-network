@@ -7,17 +7,24 @@ public class moveDude : NetworkBehaviour
 {
 
 
+
     Vector3 move = new Vector3(0,0,0);
+
+    public Transform avatar;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+
+        avatar = Instantiate(avatar, transform.position, Quaternion.identity);
+        avatar.GetComponent<player>().playerGhost = transform;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
 
 
         if (isLocalPlayer)
