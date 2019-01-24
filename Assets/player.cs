@@ -18,7 +18,7 @@ public class player : MonoBehaviour
     void Update()
     {
 
-        interpPos = Vector3.Lerp(transform.position, playerGhost.position, Time.deltaTime );
+        interpPos = Vector3.Lerp(transform.position, playerGhost.position, Time.deltaTime * 10.0f );
         transform.position = interpPos;
 
         
