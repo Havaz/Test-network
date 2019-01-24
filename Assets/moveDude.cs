@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class moveDude : MonoBehaviour
 {
+
+
+    Vector3 move = new Vector3(0,0,0);
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
+        move *= 0;
         float rotate = 0;
 
         if (Input.GetKey(KeyCode.A))
-            transform.position += new Vector3(-Time.deltaTime * 10, 0, 0);
-
+            move.Set(-Time.deltaTime * 10, 0, 0);
         if (Input.GetKey(KeyCode.D))
-            transform.position += new Vector3(Time.deltaTime * 10, 0, 0);
-
+            move.Set(Time.deltaTime * 10, 0, 0);
         if (Input.GetKey(KeyCode.W))
-            transform.position += new Vector3(0, Time.deltaTime * 10, 0);
-
+           move.Set(0, Time.deltaTime * 10, 0);
         if (Input.GetKey(KeyCode.S))
-            transform.position += new Vector3(0, -Time.deltaTime * 10, 0);
+            move.Set(0, -Time.deltaTime * 10, 0);
 
-        
-         transform.Rotate ( new Vector3(0, rotate, 0) );
+
+         transform.position += move;
+         transform.Rotate (0,0,0);
 
     }
 }
