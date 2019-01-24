@@ -14,6 +14,9 @@ public class moveDude : MonoBehaviour
     void Update()
     {
 
+
+        float rotate = 0;
+
         if (Input.GetKey(KeyCode.A))
             transform.position += new Vector3(-Time.deltaTime * 10, 0, 0);
 
@@ -26,8 +29,8 @@ public class moveDude : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
             transform.position += new Vector3(0, -Time.deltaTime * 10, 0);
 
-        if (Input.GetKey(KeyCode.G))
-            transform.Rotate ( new Vector3(0, -Time.deltaTime * 50, 0) );
+        
+         transform.Rotate ( new Vector3(0, rotate, 0) );
 
     }
 }
