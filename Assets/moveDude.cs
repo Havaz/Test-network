@@ -26,5 +26,8 @@ public class moveDude : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
             transform.position += new Vector3(0, -Time.deltaTime * 10, 0);
 
+        if (Input.GetKey(KeyCode.G))
+            transform.Rotate ( new Vector3(0, -Time.deltaTime * 50, 0) );
+
     }
 }
